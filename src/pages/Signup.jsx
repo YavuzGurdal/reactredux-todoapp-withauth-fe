@@ -6,7 +6,7 @@ import { reset, signup } from '../redux/auth/authSlice'
 import Spinner from '../components/Spinner'
 
 // import Fade from 'react-reveal/Fade';
-// import Bounce from 'react-reveal/Bounce';
+import Bounce from 'react-reveal/Bounce';
 
 const Signup = () => {
     const inputFocus = useRef();
@@ -62,41 +62,41 @@ const Signup = () => {
         <div className='auth-pages-wrapper'>
             <div className="auth-pages">
                 <section className="heading">
-                    {/* <Bounce left cascade duration={1000}> */}
-                    <h1>Let's go!</h1>
-                    {/* </Bounce> */}
+                    <Bounce left cascade duration={1000}>
+                        <h1>Let's go!</h1>
+                    </Bounce>
                 </section>
                 <section className="form">
                     {/* <Fade left cascade> */}
-                    {/* <Bounce left big cascade duration={900}> */}
-                    <form onSubmit={onSubmit} >
-                        <div className="form-group">
-                            <label htmlFor='name' >Full Name</label>
-                            <input id='name' name='name' type="text" className="form-control" placeholder='John Doe'
-                                onChange={onChange}
-                                ref={inputFocus}
-                            />
-                            <div className="input-icon"><MdPersonOutline size={20} /></div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor='email'>Email</label>
-                            <input id='email' name='email' type="text" className="form-control" placeholder='example@site.com'
-                                onChange={onChange}
-                            />
-                            <div className="input-icon"><MdOutlineMail size={20} /></div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor='password' >Choose Password</label>
-                            <input id='password' name='password' type="text" className="form-control" placeholder='Minimum 6 characters'
-                                onChange={onChange}
-                            />
-                            <div className="input-icon"><MdLockOutline size={20} /></div>
-                        </div>
-                        <div className="form-group">
-                            <button><span>Sign Up and Play with TodoApp</span></button>
-                        </div>
-                    </form>
-                    {/* </Bounce> */}
+                    <Bounce left big cascade duration={900}>
+                        <form onSubmit={onSubmit} >
+                            <div className="form-group">
+                                <label htmlFor='name' >Full Name</label>
+                                <input id='name' name='name' type="text" className="form-control" placeholder='John Doe'
+                                    onChange={onChange}
+                                    ref={inputFocus}
+                                />
+                                <div className="input-icon"><MdPersonOutline size={20} /></div>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor='email'>Email</label>
+                                <input id='email' name='email' type="text" className="form-control" placeholder='example@site.com'
+                                    onChange={onChange}
+                                />
+                                <div className="input-icon"><MdOutlineMail size={20} /></div>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor='password' >Choose Password</label>
+                                <input id='password' name='password' type="text" className="form-control" placeholder='Minimum 6 characters'
+                                    onChange={onChange}
+                                />
+                                <div className="input-icon"><MdLockOutline size={20} /></div>
+                            </div>
+                            <div className="form-group">
+                                <button><span>Sign Up and Play with TodoApp</span></button>
+                            </div>
+                        </form>
+                    </Bounce>
                 </section>
             </div>
         </div>
