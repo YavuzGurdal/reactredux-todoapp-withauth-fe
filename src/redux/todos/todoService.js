@@ -1,5 +1,5 @@
-import axios from 'axios'
-// import { axiosInstance } from "../../config"
+// import axios from 'axios'
+import { axiosInstance } from "../../config"
 
 const API_URL = '/api/todos/'
 
@@ -10,7 +10,7 @@ const createTodo = async (todo, token) => {
             Authorization: `Bearer ${token}`
         }
     }
-    const response = await axios.post(API_URL, todo, config)
+    const response = await axiosInstance.post(API_URL, todo, config)
 
     return response.data
 }
@@ -23,7 +23,7 @@ const getTodos = async (token) => {
         }
     }
 
-    const response = await axios.get(API_URL, config)
+    const response = await axiosInstance.get(API_URL, config)
 
     return response.data
 }
@@ -36,7 +36,7 @@ const deleteTodo = async (todoId, token) => {
         }
     }
 
-    const response = await axios.delete(API_URL + todoId, config)
+    const response = await axiosInstance.delete(API_URL + todoId, config)
 
     return response.data
 }
@@ -49,7 +49,7 @@ const completeTodo = async (todoId, token) => {
         }
     }
 
-    const response = await axios.get(API_URL + 'complete/' + todoId, config)
+    const response = await axiosInstance.get(API_URL + 'complete/' + todoId, config)
 
     return response.data
 }
@@ -62,7 +62,7 @@ const updateTodo = async (todoData, token) => {
         }
     }
 
-    const response = await axios.put(API_URL + todoData._id, todoData, config)
+    const response = await axiosInstance.put(API_URL + todoData._id, todoData, config)
 
     return response.data
 }
